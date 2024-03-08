@@ -94,7 +94,7 @@ function ListAllUsers() {
 
        
 
-        <div className='flex flex-wrap mx-1 mt-5 sm:mx-auto justify-between max-w-xl'>
+        <div className='flex flex-wrap mx-2 mt-5 sm:mx-auto justify-between max-w-xl'>
           {/* display all the users to whom a connection request is sent */}
           {connectionRequestedUsers && connectionRequestedUsers.map((user)=>(
             <ConnectionsUserCard key={user.profile_id} user={user} loggedInUser={userId} />
@@ -117,7 +117,7 @@ function ListAllUsers() {
 
         <Suspense fallback={<Loader/>} >
 
-         <div className='flex flex-wrap mx-1 mt-5 sm:mx-auto justify-between max-w-xl'>
+         <div className='flex flex-wrap mx-2 mt-5 sm:mx-auto justify-between max-w-xl'>
          
           {/* display the users to whom connection request is not sent */}
           {allUsers && allUsers.map((user)=>(

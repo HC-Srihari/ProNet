@@ -62,7 +62,7 @@ function ConnectionInvitations() {
         ))}
         {
           (!invitations || invitations.length ==0) &&
-          <div className='bg-gray-300 py-2 px-5 mx-1 rounded-lg text-md text-center'>
+          <div className='bg-gray-300 py-2 px-5 mx-2 rounded-lg text-md text-center'>
             You don't have any invitations
           </div>
         }

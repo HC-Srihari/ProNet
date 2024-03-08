@@ -59,7 +59,7 @@ function MessageUsersList() {
         allUsers
         .map((user)=> (
           // using the hidden class hide the loggedin user details
-           <div key={user.profile_id} className={`p-2  my-3 mx-1 bg-gray-300 rounded-lg shadow-lg ${user.user_id == loggedInUser?'hidden':''}`}>
+           <div key={user.profile_id} className={`p-2  my-3 mx-2 bg-gray-300 rounded-lg shadow-lg ${user.user_id == loggedInUser?'hidden':''}`}>
                 <div className='flex justify-between items-center'>
                 <Link to={`/profile/${user.user_id}`}>
                     <div className='flex'>

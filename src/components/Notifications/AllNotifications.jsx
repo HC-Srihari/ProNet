@@ -46,18 +46,18 @@ function AllNotifications() {
           <Loader/>
         )}
         {!loading && loggeInUser==null && 
-            <div className='bg-gray-300 px-3 py-2 text-md rounded-lg shadow-xl'>
+            <div className='bg-gray-300 px-3 py-2 mx-2 text-md rounded-lg shadow-xl'>
               Please login to see your notifications
             </div>
         }
         {!loading && notifications && notifications.length === 0 && ( // Render message when no notifications
-          <div className='bg-gray-300 px-3 py-2 text-md rounded-lg shadow-xl'>
+          <div className='bg-gray-300 px-3 py-2 mx-2 text-md rounded-lg shadow-xl'>
             You don't have any notifications...
           </div>
         )}
         {!loading && notifications && notifications.length > 0 && ( // Render notifications when data is loaded
           notifications.map(notification => (
-            <div key={notification.id} className='bg-gray-200 shadow-lg my-4 px-3 py-2 rounded-lg'>
+            <div key={notification.id} className='bg-gray-200 shadow-lg my-4 px-3 py-2 mx-2 rounded-lg'>
               
               <p><span className='font-medium'>{notification.sender_user_name}</span> {notification.message}</p>
               <p className='text-xs'>{moment(notification.created_at).fromNow()}</p>

@@ -91,7 +91,7 @@ function InvitationCard({invitation,loggedInUser}) {
     if(showInvitation){
 
         return (
-         <div key={invitation.profile_id} className='p-2 my-2 mx-1 bg-gray-300 rounded-lg'>
+         <div key={invitation.profile_id} className='p-2 my-2 mx-2 bg-gray-300 rounded-lg'>
               <div className='flex justify-between items-center'>
               <Link to={`/profile/${invitation.user_id}`}>
                   <div className='flex'>

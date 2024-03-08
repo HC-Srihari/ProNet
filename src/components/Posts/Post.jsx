@@ -141,7 +141,7 @@ function Post({post,current_user_id,user_profile_exists}) {
 
   return (
     <>
-     <div key={post.post_id} className='bg-gray-200 my-4 mx-1 p-2 rounded-xl shadow-md'>
+     <div key={post.post_id} className='bg-gray-200 my-4 mx-2 p-2 rounded-xl shadow-md'>
 
                 <Link to={`/profile/${post.author_id}`}>
                 <div className='flex '>

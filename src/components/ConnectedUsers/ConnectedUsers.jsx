@@ -31,7 +31,7 @@ function ConnectedUsers() {
     <>
     <Header/>
     <h1 className='text-xl mt-3 font-semibold text-center'>Your Connections</h1>
-    <div className='flex flex-wrap mx-1 sm:mx-auto justify-between max-w-xl'>
+    <div className='flex flex-wrap mx-2 sm:mx-auto justify-between max-w-xl'>
         {connectedUsers && connectedUsers.map((user)=>(
             user.connection_status==1?
             <UserCard key={user.receiver_user_id} user={user}  />:null

@@ -33,7 +33,7 @@ function Post({post}) {
   return (
     <>
     
-    <div key={post.post_id} className='bg-gray-200 my-4 mx-1 p-2 rounded-xl shadow-md'>
+    <div key={post.post_id} className='bg-gray-200 my-4 mx-2 p-2 rounded-xl shadow-md'>
         
         <div className='flex '>
             <img src={post.author_profile_url} className='rounded-full items-center my-auto mx-2 w-14 h-14' alt="author_profile_logo" />
