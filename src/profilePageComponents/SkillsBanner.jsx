@@ -119,7 +119,7 @@ function SkillsBanner({ user_id, isAuthor }) {
 
     return (
         <div className=' my-2 mt-4'>
-            <div className='bg-gray-200 p-2 rounded-lg'>
+            <div className='bg-gray-200 p-2 rounded-lg mx-2'>
                 <div className='flex justify-between mt-1 mb-3'>
                     <h1 className='text-xl py-1'>Skills :</h1>
                     {isAuthor &&  <button onClick={()=>(setShowModal(true))} className='bg-gray-800  hover:bg-gray-700 text-slate-200 py-1 px-4 rounded-lg'>Add</button>}

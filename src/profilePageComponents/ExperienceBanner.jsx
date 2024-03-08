@@ -116,7 +116,7 @@ function ExperienceBanner({user_id,isAuthor}) {
     }
 
   return (
-    <div className=' my-2 bg-gray-200 py-2 px-2 rounded-lg'>
+    <div className=' my-2 mx-2 bg-gray-200 py-2 px-2 rounded-lg'>
 
         <div className=' flex justify-between'>
               <h1 className='text-xl'>Experience  : </h1>

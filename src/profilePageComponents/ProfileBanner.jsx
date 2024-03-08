@@ -223,7 +223,7 @@ function ProfileBanner({user_id,isAuthor}) {
         return (
          <div className='my-2'>
            
-           <div className='bg-gray-200 py-5 rounded-lg'>
+           <div className='bg-gray-200 py-5 mx-2 rounded-lg'>
             <div className='flex justify-between '>
 
              <img src={userData?.image_url || DefaultLogo} alt="profile_pic" className='w-44 h-44 rounded-full mt-5 ml-5' />

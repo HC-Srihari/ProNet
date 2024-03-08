@@ -143,7 +143,7 @@ function PostPage() {
         <div className=' max-w-xl mx-auto '>
             <h1 className=' py-2  text-2xl font-semibold rounded-lg px-5 w-full text-center'>Create your post </h1>
 
-        <div className='mx-1'>
+        <div className='mx-2'>
 
             {editorLoaded?(
 

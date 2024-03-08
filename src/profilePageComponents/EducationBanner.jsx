@@ -119,7 +119,7 @@ function EducationBanner({user_id,isAuthor}) {
   if(!loading){
 
     return (
-      <div className=' my-2 bg-gray-200 py-2 px-2 rounded-lg'>
+      <div className=' my-2 mx-2 bg-gray-200 py-2 px-2 rounded-lg'>
   
   
           <div className=' flex justify-between'>
