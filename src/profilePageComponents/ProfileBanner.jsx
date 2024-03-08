@@ -250,7 +250,7 @@ function ProfileBanner({user_id,isAuthor}) {
            </div>
      
           {/* about/summary section */}
-            <div className='my-4 p-4 bg-gray-200 rounded-lg'>
+            <div className='my-4 mx-2 p-4 bg-gray-200 rounded-lg'>
               <h1 className='text-xl'>About :</h1>
                 {userData?.summary}
                 
