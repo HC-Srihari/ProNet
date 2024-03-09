@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import supabase from '../../supabse/supabaseConfig'
 import {toast} from 'react-toastify'
 import { Check,X } from 'lucide-react'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 function InvitationCard({invitation,loggedInUser}) {
 
@@ -95,7 +96,7 @@ function InvitationCard({invitation,loggedInUser}) {
               <div className='flex justify-between items-center'>
               <Link to={`/profile/${invitation.user_id}`}>
                   <div className='flex'>
-                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={invitation.image_url} alt="user_image" />
+                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={invitation?.image_url || DefaultLogo} alt="user_image" />
                       <div className='flex-col mt-1'>
                           <h1 className='text-sm font-semibold'>{invitation.user_name}</h1>
                           <h2 className='text-xs font-normal'>{invitation.headline}</h2>

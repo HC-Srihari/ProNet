@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link,useNavigate} from 'react-router-dom'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 
 function ConnectionsUserCard({user,loggedInUser}) {
@@ -26,7 +27,7 @@ function ConnectionsUserCard({user,loggedInUser}) {
 
       <Link to={`/profile/${user.receiver_user_id}`}>
       <img
-        src={user.image_url}
+        src={user?.image_url || DefaultLogo}
         alt="user_profile_image"
         className="h-32 w-32 rounded-full mx-auto object-cover"
       />

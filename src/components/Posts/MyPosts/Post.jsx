@@ -4,6 +4,7 @@ import parse from 'html-react-parser'
 import { toast } from 'react-toastify';
 import supabase from '../../../supabse/supabaseConfig';
 import { useNavigate } from 'react-router-dom';
+import DefaultLogo from '../../../assets/defaultLogo.jpg'
 
 function Post({post}) {
 
@@ -36,7 +37,7 @@ function Post({post}) {
     <div key={post.post_id} className='bg-gray-200 my-4 mx-2 p-2 rounded-xl shadow-md'>
         
         <div className='flex '>
-            <img src={post.author_profile_url} className='rounded-full items-center my-auto mx-2 w-14 h-14' alt="author_profile_logo" />
+            <img src={post?.author_profile_url || DefaultLogo} className='rounded-full items-center my-auto mx-2 w-14 h-14' alt="author_profile_logo" />
             
 
             <div className='flex-col'>

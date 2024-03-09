@@ -6,6 +6,7 @@ import { useParams,useNavigate,Link } from 'react-router-dom';
 import { SendHorizontal  } from 'lucide-react';
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 function Messaging() {
 
@@ -129,7 +130,7 @@ function Messaging() {
               
               <Link to={`/profile/${receiver_user_id}`}>
                   <div className='flex'>
-                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={receiverDetails?.image_url} alt="user_image" />
+                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={receiverDetails?.image_url || DefaultLogo} alt="user_image" />
                       <div className='flex-col mt-2'>
                           <h1 className='text-sm font-semibold'>{receiverDetails?.user_name}</h1>
                           <h2 className='text-xs font-normal'>{receiverDetails?.headline}</h2>

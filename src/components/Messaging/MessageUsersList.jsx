@@ -4,6 +4,7 @@ import { Link,useNavigate } from 'react-router-dom'
 import Header from '../Header/Header'
 import { useSelector } from 'react-redux'
 import Loader from '../Loader/Loader'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 function MessageUsersList() {
 
@@ -63,7 +64,7 @@ function MessageUsersList() {
                 <div className='flex justify-between items-center'>
                 <Link to={`/profile/${user.user_id}`}>
                     <div className='flex'>
-                        <img className='w-12 h-12 items-center rounded-full m-1 mr-2' src={user.image_url} alt="user_image" />
+                        <img className='w-12 h-12 items-center rounded-full m-1 mr-2' src={user?.image_url || DefaultLogo} alt="user_image" />
                         <div className='flex-col mt-2'>
                             <h1 className='text-sm font-semibold'>{user.user_name}</h1>
                             <h2 className='text-xs font-normal'>{user.headline}</h2>

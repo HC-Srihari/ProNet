@@ -16,6 +16,8 @@ function ConnectedUsers() {
         })
       if(data){
         // console.log(data);
+        data = data.filter(data =>(data.connection_status ==  1 ))
+
         setConnectedUsers(data)
       }else{
         console.log(error);
@@ -36,6 +38,12 @@ function ConnectedUsers() {
             user.connection_status==1?
             <UserCard key={user.receiver_user_id} user={user}  />:null
         ))}
+
+        {(!connectedUsers ||connectedUsers.length == 0) &&
+        <div className='bg-gray-300 text-center sm:mx-auto px-3 py-2 mx-2 text-md rounded-lg shadow-xl' >
+          You don't have any connections. Create connections
+        </div>
+        }
           
     </div>
     </>

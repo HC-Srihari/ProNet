@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import {ThumbsUp,MessageCircleMore } from 'lucide-react'
 import ImageLoaderSkeleton from '../Loader/ImageLoaderSkeleton'
 import { toast } from 'react-toastify'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 
 
@@ -145,7 +146,7 @@ function Post({post,current_user_id,user_profile_exists}) {
 
                 <Link to={`/profile/${post.author_id}`}>
                 <div className='flex '>
-                    <img src={post.author_profile_url} className='rounded-full items-center my-auto mx-2 w-14 h-14' alt="author_profile_logo" />
+                    <img src={post?.author_profile_url || DefaultLogo} className='rounded-full items-center my-auto mx-2 w-14 h-14' alt="author_profile_logo" />
                     <div className='flex-col'>
                     <p className='text-md font-semibold pt-1'>{post.author_name}</p>
                     <p className='text-sm '>{post.author_headline}</p>

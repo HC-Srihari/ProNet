@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import supabase from '../../supabse/supabaseConfig'
 import { toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
+import DefaultLogo from '../../assets/defaultLogo.jpg'
 
 
 function UserCard({user,loggedInUser}) {
@@ -43,7 +44,7 @@ function UserCard({user,loggedInUser}) {
 
       <Link to={`/profile/${user.user_id}`}>
       <img
-        src={user.image_url}
+        src={user?.image_url || DefaultLogo}
         alt="user_profile_image"
         className="h-32 w-32 rounded-full mx-auto object-cover"
       />
