@@ -45,7 +45,7 @@ function InvitationCard({invitation,loggedInUser}) {
             // console.log(data);
             createConnection()
             setShowInvitaion(false)
-            // toast.success('Connection request accepted !!!')
+            toast.success('Connection request accepted !!!')
 
         }else{
             console.log(error);

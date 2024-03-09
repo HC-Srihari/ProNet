@@ -18,6 +18,13 @@ function Post({post}) {
         .delete()
         .eq('post_id', post.post_id)
 
+
+        if(post.post_image_url){
+          deleteImage(post.post_image_url)
+        }
+
+        
+
         if(error){
             console.log(error);
             toast.error(error.message)
@@ -30,6 +37,31 @@ function Post({post}) {
         navigate('/')
        
           
+    }
+
+    const deleteImage = async(post_image_url)=>{
+
+      //split the image url
+    const parts = post_image_url?.split("/");
+  // Extract the last element
+    if(parts.length >0){
+
+      const user_bucket =parts[parts?.length - 2];
+      const image_url = parts[parts?.length - 1];
+      console.log(user_bucket);
+      console.log(image_url);
+
+
+      const { data, error } = await supabase
+        .storage
+        .from('posts')
+        .remove([`${user_bucket}/${image_url}`])
+
+        if(error){
+          console.log(error);
+        }
+    }
+      
     }
   return (
     <>
@@ -54,7 +86,7 @@ function Post({post}) {
         
         {/* <div className='py-2'>Posted at : {post.post_date}</div> */}
         <div className='py-2'>{parse(post.content)}</div>
-        {post.post_image_url &&   <img className='w-full rounded-xl  sm:max-w-xl max-h-[350px] mx-auto' src={post.post_image_url} alt="" />}
+        {post?.post_image_url &&   <img className='w-full rounded-xl  sm:max-w-xl max-h-[350px] mx-auto' src={post?.post_image_url} alt="" />}
     </div>
 
       {showModal ? (
