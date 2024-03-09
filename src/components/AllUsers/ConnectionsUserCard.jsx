@@ -23,7 +23,7 @@ function ConnectionsUserCard({user,loggedInUser}) {
 
 
   return (
-     <div className="w-1/2 mx-auto    sm:w-[250px] rounded-md border bg-gray-300   mt-5 pt-3">
+     <div className="w-1/2 mx-auto sm:w-[250px]  rounded-md border bg-gray-300 shadow-lg my-3 pt-3">
 
       <Link to={`/profile/${user.receiver_user_id}`}>
       <img
