@@ -186,7 +186,7 @@ function Post({post,current_user_id,user_profile_exists}) {
                               <div className='flex justify-between items-center'>
                                 <Link to={`/profile/${comment.user_id}`}>
                                   <div className='flex'>
-                                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={comment.image_url} alt="comment_author_image" />
+                                      <img className='w-10 h-10 items-center rounded-full m-1 mr-2' src={comment?.image_url || DefaultLogo} alt="comment_author_image" />
                                       <div className='flex-col'>
                                           <h1 className='text-sm font-semibold'>{comment.user_name}</h1>
                                           <h2 className='text-xs font-normal'>{comment.headline}</h2>
