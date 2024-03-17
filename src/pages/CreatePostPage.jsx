@@ -150,8 +150,8 @@ function PostPage() {
             <Editor
                 apiKey={TINYMCE_API_KEY}
                 init={{
-                    plugins: 'autolink charmap emoticons link lists searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions autocorrect typography inlinecss',
-                    toolbar: 'undo redo | link bold italic underline strikethrough | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    plugins: 'autolink charmap emoticons link lists searchreplace table visualblocks wordcount linkchecker  ',
+                    toolbar: 'undo redo | link bold italic underline strikethrough | spellcheckdialog a11ycheck typography | align lineheight |  numlist bullist indent outdent | emoticons charmap | removeformat',
                     tinycomments_mode: 'embedded',
                     tinycomments_author: 'Author name',
                     mergetags_list: [
