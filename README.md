@@ -1,5 +1,7 @@
 # A Fullstack Linkedin Clone using React,PostgreSQL and Supabase
 
+## Reference : [Blog](https://medium.com/towards-data-engineering/database-design-for-a-system-like-linkedin-3c52a5ab28c0)
+
 ## DB Schema for the Application : [check here](https://drawsql.app/teams/h-c-srihari-team/diagrams/linkedin-clone)
 
 ### Key Features :
