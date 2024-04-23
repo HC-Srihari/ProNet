@@ -23,6 +23,8 @@ import AllNotifications from './components/Notifications/AllNotifications.jsx'
 import ConnectedUsers from './components/ConnectedUsers/ConnectedUsers.jsx'
 import MyPosts from './components/Posts/MyPosts/MyPosts.jsx'
 
+import { Analytics } from "@vercel/analytics/react"
+
 const router = createBrowserRouter([
   {
     path:'/',
@@ -99,6 +101,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
  
       <Provider store={store}>
         <ToastContainer/>
+        <Analytics/>
     <RouterProvider router={router}>
     </RouterProvider>
       </Provider>
