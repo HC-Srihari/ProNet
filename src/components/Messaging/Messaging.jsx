@@ -74,7 +74,7 @@ function Messaging() {
         // console.log('message sent');
         // console.log(message);
 
-        if(message.trim.length == 0){
+        if(message.trim().length === 0){
             toast.warning("Message cannot be empty !")
             return
         }
