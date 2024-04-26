@@ -113,6 +113,11 @@ function AllPosts() {
             onClick={()=>(navigate('/myposts'))}
             >My Posts</button>
        }
+        {!current_user_id && 
+            <button  className='py-2 block ml-2 text-md bg-gray-800 hover:bg-gray-700 text-slate-200 rounded-full px-5 sm:px-10'
+            onClick={()=>(navigate('/login'))}
+            >Please login to create posts</button>
+       }
         </div>
 
     
