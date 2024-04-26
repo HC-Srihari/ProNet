@@ -118,7 +118,8 @@ function Post({post,current_user_id,user_profile_exists}) {
 
         // console.log(commentValue);
         if(commentValue.trim().length === 0){
-          alert('comment cannot be empty')
+          // alert('comment cannot be empty')
+          toast.warning("Comment cannot be empty !")
           return;
         }
         if(!user_profile_exists){

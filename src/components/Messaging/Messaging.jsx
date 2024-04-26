@@ -7,6 +7,7 @@ import { SendHorizontal  } from 'lucide-react';
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader'
 import DefaultLogo from '../../assets/defaultLogo.jpg'
+import { toast } from 'react-toastify';
 
 function Messaging() {
 
@@ -72,6 +73,11 @@ function Messaging() {
         e.preventDefault();
         // console.log('message sent');
         // console.log(message);
+
+        if(message.trim.length == 0){
+            toast.warning("Message cannot be empty !")
+            return
+        }
         const credentials = { sender_user_id: loggedInUser, receiver_user_id: receiver_user_id, message: message };
         setMessage('');
 
