@@ -20,6 +20,9 @@ function Post({post,current_user_id,user_profile_exists}) {
     const [commentValue,setCommentValue] = useState('')
     const [showModal, setShowModal] = useState(false);
     const [loading,setLoading] = useState(false)
+    const [showDeleteCommentModal,setShowDeleteCommentModal] = useState(false)
+    //states to handle comment deletion
+    const [deleteCommentId,setDeleteCommentId] = useState(null)
 
     
 
@@ -128,7 +131,7 @@ function Post({post,current_user_id,user_profile_exists}) {
 
         const { data, error } = await supabase
         .from('comments')
-        .upsert([credentials])
+        .insert([credentials])
         .select()
 
         if(data){
@@ -137,6 +140,29 @@ function Post({post,current_user_id,user_profile_exists}) {
         }else{
             console.log(error);
         } 
+    }
+
+    const deleteComment = async()=>{
+      
+      const commentId = deleteCommentId;
+
+      const { error } = await supabase
+        .from('comments')
+        .delete()
+        .eq('comment_id', commentId);
+
+        if(error){
+          toast.error(error.message);
+        }else{
+          toast.success('Comment deleted succesfully !!!')
+        }
+
+        getAllComments(post.post_id,false);
+
+        setShowDeleteCommentModal(false)
+
+
+          
     }
 
 
@@ -193,7 +219,11 @@ function Post({post,current_user_id,user_profile_exists}) {
                                       </div>
                                   </div>
                                 </Link>
+                                <div className='flex items-center'>
                                   <p className='text-xs'>{moment(comment.comment_date).fromNow()}</p>
+                                  <button onClick={()=>(setShowDeleteCommentModal(true), setDeleteCommentId(comment.comment_id))} className={`bg-black ${current_user_id == comment.user_id?'block':'hidden'} text-white p-2 ml-3 rounded-lg`}>Delete</button>
+
+                                </div>
                               </div>
                               <div className='ml-2'>
                                   {comment.content}
@@ -216,6 +246,7 @@ function Post({post,current_user_id,user_profile_exists}) {
                 </div>
         </div>
 
+        {/* //modal to tell the user to login/update profile before commenting */}
         {showModal ? (
                <>
                <div
@@ -258,7 +289,56 @@ function Post({post,current_user_id,user_profile_exists}) {
                  </div>
                  
                </>
-             ) : null}
+             )
+              : null
+        }
+
+        {/* //model to show when user tries to delete his comments */}
+        {showDeleteCommentModal ? (
+               <>
+               <div
+                 className="justify-center items-center flex   fixed inset-0 z-50 outline-none focus:outline-none  "
+                 
+               >
+                 <div className="relative my-5 max-w-2xl w-4/5">
+                   {/*content*/}
+                   <div className="border-0 rounded-lg shadow-xl relative flex flex-col w-full outline-none focus:outline-none bg-gray-300 mt-10 max-h-screen my-5 overflow-y-auto overflow-x-hidden  ">
+                       {/*header*/}
+                       <div className="flex items-start justify-between p-5 ">
+                        <h1 className='font-semibold mx-auto text-md'>Do you want to delete your comment ?</h1>
+
+                       </div>
+                       {/*body*/}
+
+                          
+                        <div className='flex mx-auto '>
+
+                        <button onClick={()=>(deleteComment())}
+                        className="bg-gray-800 text-white hover:bg-gray-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none  mb-1 mr-2 ease-linear transition-all duration-150"                      
+                        >
+                        Yes
+                        </button>
+
+                        <button
+                           className="bg-red-400 text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-2 ml-2 mb-1 ease-linear transition-all duration-150"
+                           onClick={()=>(setShowDeleteCommentModal(false))}
+                           
+                         >
+                           No 
+                        </button>
+                           
+
+                        </div>
+                       {/*footer*/}
+                  
+                     </div>
+                   </div>
+                 </div>
+                 
+               </>
+             )
+              : null
+        }
     </>
   )
 }
