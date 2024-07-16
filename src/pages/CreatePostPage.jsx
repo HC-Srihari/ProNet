@@ -49,6 +49,11 @@ function PostPage() {
     // console.log(editorContent);
     // setPostContent(editorContent)
 
+    if(editorContent.trim.length == 0 ){
+        toast.info("Cannot upload empty post !!!")
+        return;
+    }
+
     let credentials = {user_id:user_id,content:editorContent}
 
     // console.log(credentials);
