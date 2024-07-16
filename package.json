@@ -14,6 +14,7 @@
     "@supabase/supabase-js": "^2.39.7",
     "@tinymce/tinymce-react": "^4.3.2",
     "@vercel/analytics": "^1.2.2",
+    "dompurify": "^3.1.6",
     "html-react-parser": "^5.1.8",
     "lucide-react": "^0.344.0",
     "moment": "^2.30.1",

@@ -9,6 +9,7 @@ import { SUPABASE_BUCKET_URL } from '../constants/constants';
 import { toast } from 'react-toastify';
 import Header from '../components/Header/Header'
 import Loader from '../components/Loader/Loader'
+import DOMPurify from 'dompurify'
 
 function PostPage() {
 
@@ -41,6 +42,13 @@ function PostPage() {
     },1000)
   }
 
+  const isContentEmpty = (content)=>{
+    const cleanContent = DOMPurify.sanitize(content, { ALLOWED_TAGS: [] });
+    // console.log(cleanContent);
+    const textContent = cleanContent.replace(/&nbsp;/g, '').trim();
+    // console.log(textContent);
+    return textContent.length === 0;
+  }
 
   const handleSubmit = async() => {
     // if(!isProfileExists){
@@ -49,7 +57,7 @@ function PostPage() {
     // console.log(editorContent);
     // setPostContent(editorContent)
 
-    if(editorContent.trim.length == 0 ){
+    if(isContentEmpty(editorContent)){
         toast.info("Cannot upload empty post !!!")
         return;
     }
