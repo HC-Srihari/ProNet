@@ -1,4 +1,4 @@
-# A Fullstack Linkedin Clone using React,PostgreSQL and Supabase
+# A Professional Networking application built using React, Supabase and PostgreSQL
 
 ## Reference : [Blog](https://medium.com/towards-data-engineering/database-design-for-a-system-like-linkedin-3c52a5ab28c0)
 
